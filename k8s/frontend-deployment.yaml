@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: todo-frontend
+        imagePullPolicy: Never # Важливо: беремо зібраний образ з Minikube
+        ports:
+        - containerPort: 80 # Nginx всередині контейнера працює на 80 порті
