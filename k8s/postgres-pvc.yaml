@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce # Диск може читати/писати тільки один вузол одночасно
+  resources:
+    requests:
+      storage: 1Gi # Просимо 1 Гігобайт пам'яті
+  storageClassName: standard # Стандартний тип сховища в Minikube
