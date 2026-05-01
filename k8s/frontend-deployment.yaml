@@ -18,3 +18,10 @@ spec:
         imagePullPolicy: Never # Важливо: беремо зібраний образ з Minikube
         ports:
         - containerPort: 80 # Nginx всередині контейнера працює на 80 порті
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 500m
+            memory: 256Mi
